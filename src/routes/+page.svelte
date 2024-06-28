@@ -39,7 +39,7 @@
 	}}
 />
 
-<div class="h-screen w-full grid grid-cols-3 items-center p-6">
+<div class="relative h-screen w-full grid grid-cols-3 items-center p-6">
 	<ul class="w-64 max-h-screen overflow-auto">
 		{#each data.dhikr as dhikr, i (i)}
 			<li>
@@ -56,12 +56,12 @@
 		<div class="h-1/3"></div>
 		<button
 			type="button"
-			class="max-w-72 h-1/3 aspect-square text-center hover:text-black/50 overflow-auto"
+			class="max-w-96 w-full h-1/3 aspect-square text-center hover:text-black/50 overflow-auto"
 			on:click={decreaseCount}
 		>
-			{data.dhikr[index].dhikr}
+			{data.dhikr[index].quran ?? data.dhikr[index].dhikr}
 		</button>
-		<div class="h-1/3">
+		<div class="h-1/3 flex flex-col items-center justify-center">
 			<h2 class="text-center">عدد المرات: {count}</h2>
 			<div class="inline-flex w-full items-center justify-center gap-6">
 				<button
@@ -76,6 +76,20 @@
 					on:click={nextDhikr}
 					disabled={index === data.dhikr.length - 1}>بعد</button
 				>
+			</div>
+			<button
+				class="text-sm text-black/80"
+				on:click={() => {
+					document.getElementById('help-popover')?.classList.toggle('hidden');
+				}}
+			>
+				معلومات
+			</button>
+			<div
+				id="help-popover"
+				class="absolute left-0 bottom-0 border hidden m-2 p-2 border-black rounded-md backdrop:blur-lg"
+			>
+				<p>الضغط على الذكر في وصط الشاشه أو على مفتاح "Space" ينقص عدد مرات الذكر</p>
 			</div>
 		</div>
 	</div>
