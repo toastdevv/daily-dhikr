@@ -58,6 +58,11 @@
 			type="button"
 			class="max-w-96 w-full h-1/3 aspect-square text-center hover:text-black/50 overflow-auto"
 			on:click={decreaseCount}
+			on:keydown={(e) => {
+				if (e.key === ' ' || e.key === 'Space') {
+					e.preventDefault();
+				}
+			}}
 		>
 			{data.dhikr[index].quran ?? data.dhikr[index].dhikr}
 		</button>
