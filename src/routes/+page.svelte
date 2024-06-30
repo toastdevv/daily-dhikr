@@ -39,6 +39,10 @@
 	}}
 />
 
+<svelte:head>
+	<title>أذكار يومية</title>
+</svelte:head>
+
 <div class="relative h-screen w-full grid grid-cols-3 items-center p-6">
 	<ul class="w-64 max-h-screen overflow-auto">
 		{#each data.dhikr as dhikr, i (i)}
