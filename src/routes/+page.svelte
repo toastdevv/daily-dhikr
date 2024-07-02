@@ -98,7 +98,7 @@
 				id="help-popover"
 				class="absolute left-0 bottom-0 border hidden m-2 p-2 border-black rounded-md backdrop:blur-lg"
 			>
-				<p>الضغط على الذكر في وسط الشاشه أو على مفتاح "Space" ينقص عدد مرات الذكر</p>
+				<p>الضغط على الذِّكر في وسط الشاشه أو على مفتاح "Space" ينقص عدد مرات الذِّكر</p>
 			</div>
 		</div>
 	</div>
